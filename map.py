@@ -14,6 +14,7 @@ class Map():
 
     def conflict(self, position: list[int]) -> bool:
         """マップ上のオブジェクトと与えられた位置との衝突判定を行うメソッド.
+        想定しているマップの範囲外をpositionで指定した場合も衝突したと判定する.
 
         Args:
             position (list[int]): 衝突判定を行う相手の位置.
@@ -56,6 +57,7 @@ class Map():
 
 class Block():
     """一つのブロックの位置を保持し衝突判定を行うクラス.
+
     Attributes:
         size (list[int]): マップのサイズ.(マップはsize*sizeのサイズとなる)
     """
