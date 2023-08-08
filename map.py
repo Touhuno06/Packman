@@ -81,9 +81,14 @@ class Block():
     """一つのブロックの位置を保持し衝突判定を行うクラス.
 
     Attributes:
-        size (list[int]): マップのサイズ.(マップはsize*sizeのサイズとなる)
+        position (list[int]): ブロックの初期位置.
     """
     def __init__(self, position: list[int]) -> None:
+        """Blockクラスのコンストラクタ.
+
+        Args:
+            position (list[int]): ブロックの初期位置.
+        """
         self.position = position
     
     def conflict(self, position: list[int]) -> bool:
