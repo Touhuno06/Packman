@@ -63,7 +63,7 @@ class Controller():
         screen = []
         _screen: list[list[str]] = ['X'] * map_shape[1]
         for i in range(map_shape[0]):
-            screen = screen.append(deepcopy(_screen))
+            screen.append(deepcopy(_screen))
         # positionからオブジェクトの位置情報を取り出して、
         # アイコンを表示する位置を決定する
         for object in position:
@@ -77,6 +77,11 @@ class Controller():
     
 def main():
     ct = Controller()
-
+    map = Map(10)
+    player = Player([2, 3])
+    ghost = Ghost([4, 6])
+    block = Block([9, 0])
+    ct.display(map, [player, ghost, block])
+    
 if __name__ == "__main__":
     main()
