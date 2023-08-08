@@ -8,18 +8,24 @@ class Ghost():
     このクラスはお化けの座標を管理する．
 
     '''
-    def __init__(self, position: list[int]):
+    def __init__(self, position: list[int], icon: str = 'G'):
         '''
         敵の初期座標を設定する．
+        敵の表示の設定を行う．
+
         Args:
             position (list[int]): 敵の初期座標
+            icon (str): 敵の表示
         Example:
             >>> ghost_1 = Ghost([5, 4])
             >>> ghost_1.position
             [5, 4]
+            >>> ghost_1.icon
+            'G'
         '''
 
         self.position = position
+        self.icon = icon
     
     def pre_move(self) -> list[int]:
         '''
