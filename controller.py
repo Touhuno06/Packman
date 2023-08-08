@@ -55,7 +55,20 @@ class Controller():
             Examples:
                 >>> ct = Controller()
         '''
-        pass
+        # mapのサイズを取得
+        map_shape: tuple[int, int] = map.shape
+        # screeをmapのサイズに合わせて初期化
+        screen: list[list[str]] = [['X'] * map_shape[1]] * map_shape[0]
+        # positionからオブジェクトの位置情報を取り出して、
+        # アイコンを表示する位置を決定する
+        for object in position:
+            pos: list[int, int] = object.position
+            screen[pos[0]][pos[1]]: str = object.icon
+        # screenを表示する
+        for row in screen:
+            for col in row:
+                print(col, end="")
+            print()
     
 def main():
     ct = Controller()
