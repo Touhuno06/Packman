@@ -5,6 +5,27 @@ class Map():
         size (int): マップのサイズ.(マップはsize*sizeのサイズとなる)
     """
     def __init__(self, size: int) -> None:
+        """Mapクラスのコンストラクタ.
+        マップのサイズ定義とBlockオブジェクトの配置を行う.
+
+        Args:
+            size (int): マップのサイズ.(マップはsize*sizeのサイズとなる)
+        
+        Example:
+            >>> map = Map(3)
+            >>> map.shape
+            (3, 3)
+            >>> for block in map.block_array:
+            ...      block.position
+            [0, 0]
+            [0, 1]
+            [0, 2]
+            [1, 0]
+            [1, 2]
+            [2, 0]
+            [2, 1]
+            [2, 2]
+        """
         self.block_array = list()
         self.shape = (size, size)
         for i in range(size):
@@ -60,9 +81,14 @@ class Block():
     """一つのブロックの位置を保持し衝突判定を行うクラス.
 
     Attributes:
-        size (list[int]): マップのサイズ.(マップはsize*sizeのサイズとなる)
+        position (list[int]): ブロックの初期位置.
     """
     def __init__(self, position: list[int]) -> None:
+        """Blockクラスのコンストラクタ.
+
+        Args:
+            position (list[int]): ブロックの初期位置.
+        """
         self.position = position
     
     def conflict(self, position: list[int]) -> bool:
