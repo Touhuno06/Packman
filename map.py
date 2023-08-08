@@ -5,6 +5,27 @@ class Map():
         size (int): マップのサイズ.(マップはsize*sizeのサイズとなる)
     """
     def __init__(self, size: int) -> None:
+        """Mapクラスのコンストラクタ.
+        マップのサイズ定義とBlockオブジェクトの配置を行う.
+
+        Args:
+            size (int): マップのサイズ.(マップはsize*sizeのサイズとなる)
+        
+        Example:
+            >>> map = Map(3)
+            >>> map.shape
+            (3, 3)
+            >>> for block in map.block_array:
+            ...      block.position
+            [0, 0]
+            [0, 1]
+            [0, 2]
+            [1, 0]
+            [1, 2]
+            [2, 0]
+            [2, 1]
+            [2, 2]
+        """
         self.block_array = list()
         self.shape = (size, size)
         for i in range(size):
