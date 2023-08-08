@@ -1,3 +1,4 @@
+from copy import deepcopy
 from player import Player
 from ghost import Ghost
 from map import Block, Map
@@ -46,19 +47,23 @@ class Controller():
                 direction = [0, 1]
         return direction
 
-    def display(self, map: Map, position: list[Player | Ghost | Block]):
+    def display(self, map: Map, position: list[Player | Ghost | Block])->None:
         '''
             Player, Ghost, Blockの位置情報を受け取り、描画処理を行う
             Args:
                 map: Map
                 position: list[Player | Ghost | Block]
             Examples:
-                >>> ct = Controller()
+                >>> controller = Controller()
+                >>> controller.display(map, [player, ghost, block])
         '''
         # mapのサイズを取得
         map_shape: tuple[int, int] = map.shape
         # screeをmapのサイズに合わせて初期化
-        screen: list[list[str]] = [['X'] * map_shape[1]] * map_shape[0]
+        screen = []
+        _screen: list[list[str]] = ['X'] * map_shape[1]
+        for i in range(map_shape[0]):
+            screen = screen.append(deepcopy(_screen))
         # positionからオブジェクトの位置情報を取り出して、
         # アイコンを表示する位置を決定する
         for object in position:
@@ -67,7 +72,7 @@ class Controller():
         # screenを表示する
         for row in screen:
             for col in row:
-                print(col, end="")
+                print(col, end=" ")
             print()
     
 def main():
