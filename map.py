@@ -46,8 +46,9 @@ class Map():
             >>> map.conflict([-1, 1])
             True
         """
-        if(position[0]<0 or position[1]<0 or position[0]>=self.shape[0] or position[1]>=self.shape[1]):
-            return True
+        for i, coordinate in enumerate(position):
+            if(coordinate<0 or coordinate>=self.shape[i]):
+                return True
         for block in self.block_array:
             if(position==block.position):
                 return True
