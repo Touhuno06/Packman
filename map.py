@@ -83,13 +83,22 @@ class Block():
     Attributes:
         position (list[int]): ブロックの初期位置.
     """
-    def __init__(self, position: list[int]) -> None:
+    def __init__(self, position: list[int], icon: str = 'B') -> None:
         """Blockクラスのコンストラクタ.
 
         Args:
             position (list[int]): ブロックの初期位置.
+            icon (str): ブロックの表示.
+        
+        Example:
+            >>> block = Block([1, 2])
+            >>> block.position
+            [1, 2]
+            >>> block.icon
+            'B'
         """
         self.position = position
+        self.icon = icon
     
     def conflict(self, position: list[int]) -> bool:
         """ブロックとの衝突判定を行うメソッド.
