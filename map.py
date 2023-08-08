@@ -54,6 +54,7 @@ class Map():
             if(position==block.position):
                 return True
         return False
+    
 
 class Block():
     """一つのブロックの位置を保持し衝突判定を行うクラス.
