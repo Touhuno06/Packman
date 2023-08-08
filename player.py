@@ -10,14 +10,16 @@ class Player():
         position(list[int]): Playerの位置を示す
     """
 
-    def __init__(self, position: list[int]):
+    def __init__(self, position: list[int], icon: str = 'P'):
         """
         インスタンスの初期化
 
         Args:
             position(list[int]): 初期位置
+            icon (str): プレイヤーの表示.
         """
         self.position = position
+        self.icon = icon
     
     def pre_move(self, movement_position: list[int]) -> list[int]:
         """
