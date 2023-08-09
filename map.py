@@ -1,3 +1,6 @@
+from item import Block
+
+
 class Map():
     """マップ上のオブジェクトを保持し、衝突判定を行うクラス.
 
@@ -75,52 +78,7 @@ class Map():
             if(position==block.position):
                 return True
         return False
-    
 
-class Block():
-    """一つのブロックの位置を保持し衝突判定を行うクラス.
-
-    Attributes:
-        position (list[int]): ブロックの初期位置.
-    """
-    def __init__(self, position: list[int], icon: str = 'B') -> None:
-        """Blockクラスのコンストラクタ.
-
-        Args:
-            position (list[int]): ブロックの初期位置.
-            icon (str): ブロックの表示.
-        
-        Example:
-            >>> block = Block([1, 2])
-            >>> block.position
-            [1, 2]
-            >>> block.icon
-            'B'
-        """
-        self.position = position
-        self.icon = icon
-    
-    def conflict(self, position: list[int]) -> bool:
-        """ブロックとの衝突判定を行うメソッド.
-
-        Args:
-            position (list[int]): 衝突判定を行う相手の位置.
-
-        Returns:
-            bool: 衝突するならTrue, しなければFalse.
-
-        Example:
-            >>> block = Block([0,4])
-            >>> block.conflict([0,4])
-            True
-            >>> block.conflict([1,4])
-            False
-        """
-        if(position==self.position):
-            return True
-        else:
-            return False
-        
 
 if __name__ == '__main__':
     import doctest

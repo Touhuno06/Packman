@@ -1,7 +1,6 @@
-from map import Map, Block
-from player import Player
+from map import Map
+from item import Player, Ghost, Block
 from controller import Controller
-from ghost import Ghost
 
 
 class Game():

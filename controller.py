@@ -1,7 +1,6 @@
 from copy import deepcopy
-from player import Player
-from ghost import Ghost
-from map import Block, Map
+from item import Player, Ghost, Block
+from map import Map
 from getkey import getkey, keys
 
 class Controller():
