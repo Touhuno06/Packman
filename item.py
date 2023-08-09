@@ -57,23 +57,23 @@ class Item():
         Returns:
             bool: 敵の座標とプレイヤーの座標が一致しているか、一致していたらTrue
         Example:
-            >>> ghost_1=Ghost([5,4]) 
-            >>> ghost_2=Ghost([5,2])
-            >>> ghost_1.conflict([5,4])
+            >>> ghost_1 = Ghost([5, 4]) 
+            >>> ghost_2 = Ghost([5, 2])
+            >>> ghost_1.conflict([5, 4])
             True
-            >>> ghost_1.conflict([5,5])
+            >>> ghost_1.conflict([5, 5])
             False
-            >>> ghost_1.conflict([5,4,6])
+            >>> ghost_1.conflict([5, 4, 6])
             False
-            >>> ghost_1.conflict([5.0,4])
+            >>> ghost_1.conflict([5.0, 4])
             True
-            >>> ghost_1.conflict([5,4.0])
+            >>> ghost_1.conflict([5, 4.0])
             True
-            >>> ghost_2.conflict([5,2])
+            >>> ghost_2.conflict([5, 2])
             True
-            >>> ghost_2.conflict([2147483649,4])
+            >>> ghost_2.conflict([2147483649, 4])
             False
-            >>> ghost_1.conflict((5,4))
+            >>> ghost_1.conflict((5, 4))
             False
         '''
 
@@ -105,8 +105,9 @@ class Player(Item):
     """
     プレイヤーのクラス
 
+    このクラスはプレイヤーの座標を管理する．
     Attributes:
-        position (list[int]): Playerの位置を示す
+        position (list[int]): プレイヤーの位置を示す
     """
     def __init__(self, position: list[int], icon: str = 'P') -> None:
         """
@@ -174,24 +175,24 @@ class Block(Item):
             movement_position (list[int]): 次の動作の相対的な位置
 
         Return:
-            list[int]: 次の位置
+            list [int]: 次の位置
 
         Example:
-            >>> b=Block([0,0])
+            >>> b = Block([0,0])
             >>> try:
             ...     b.pre_move([0,1])
             ... except Exception as e:
             ...     print(e)
             ブロックは移動できません
 
-            >>> b=Block([0,0])
+            >>> b = Block([0,0])
             >>> try:
             ...     b.pre_move([-1,0])
             ... except Exception as e:
             ...     print(e)
             ブロックは移動できません
 
-            >>> b=Block([1,0])
+            >>> b = Block([1,0])
             >>> try:
             ...     b.pre_move([1,0])
             ... except Exception as e:
@@ -201,6 +202,37 @@ class Block(Item):
         raise Exception('ブロックは移動できません')
 
     def move(self, next_position: list[int]) -> None:
+        """
+        moveにおけるブロックの例外処理
+        
+        Args:
+            movement_position (list[int]): 次の動作の位置
+
+        Return:
+            list[int]: 次の位置
+
+        Example:
+            >>> b = Block([0, 0])
+            >>> try:
+            ...     b.move([0, 1])
+            ... except Exception as e:
+            ...     print(e)
+            ブロックは移動できません
+
+            >>> b = Block([0, 0])
+            >>> try:
+            ...     b.move([-1, 0])
+            ... except Exception as e:
+            ...     print(e)
+            ブロックは移動できません
+
+            >>> b = Block([1, 0])
+            >>> try:
+            ...     b.move([1, 0])
+            ... except Exception as e:
+            ...     print(e)
+            ブロックは移動できません
+        """
         raise Exception('ブロックは移動できません')
 
 
