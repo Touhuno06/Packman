@@ -31,4 +31,3 @@ python main.py
 ├── main.py             #実行ファイル
 ├── map.py              #マップの生成
 └── requirements.txt    
-```
