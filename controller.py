@@ -1,7 +1,6 @@
 from copy import deepcopy
-from player import Player
-from ghost import Ghost
-from map import Block, Map
+from item import Player, Ghost, Block
+from map import Map
 from getkey import getkey, keys
 
 class Controller():
@@ -66,7 +65,7 @@ class Controller():
             screen.append(deepcopy(_screen))
         # positionからオブジェクトの位置情報を取り出して、
         # アイコンを表示する位置を決定する
-        for object in position:
+        for object in sorted(position):
             pos: list[int, int] = object.position
             screen[pos[0]][pos[1]]: str = object.icon
         # screenを表示する

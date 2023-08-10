@@ -24,12 +24,11 @@ python main.py
 - プロジェクトの構成は以下の通り.
 ```shell
 .
-|-- README.md           
-|-- controller.py       #描画処理を行うファイル
-|-- game.py             #ゲーム全体の動作ファイル
-|-- ghost.py            #ゴーストの動作ファイル
-|-- main.py             #実行ファイル
-|-- map.py              #マップの生成及び判定のファイル
-|-- player.py           #プレイヤ―の動作ファイル
-`-- requirements.txt    
+├── README.md
+├── controller.py       #描画処理を行うファイル
+├── game.py             #ゲーム全体の動作ファイル
+├── item.py             #ゴースト, プレイヤー, ブロックの動作ファイル
+├── main.py             #実行ファイル
+├── map.py              #マップの生成
+└── requirements.txt    
 ```
