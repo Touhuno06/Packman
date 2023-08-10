@@ -7,6 +7,8 @@ class Item():
 
     Attributes:
         position (list[int]): Playerの位置を示す
+        icon (str): プレイヤーの表示
+        priority (int): 表示の優先度
     """
         
     def __init__(self, position: list[int], icon: str) -> None:
@@ -19,6 +21,7 @@ class Item():
         """
         self.position = position
         self.icon = icon
+        self.priority = 0
 
     def pre_move(self, movement_position: list[int]) -> list[int]:
         """
@@ -100,6 +103,12 @@ class Item():
 
         self.position = next_position
 
+    def __lt__(self,other):
+        """
+        比較する為のメソッド
+        """
+        return self.priority < other.priority
+
 
 class Player(Item):    
     """
@@ -118,6 +127,7 @@ class Player(Item):
             icon (str): プレイヤーの表示
         """
         super().__init__(position, icon)
+        self.priority = 1
 
 
 class Ghost(Item):
@@ -136,6 +146,7 @@ class Ghost(Item):
             icon (str): プレイヤーの表示
         """
         super().__init__(position, icon)
+        self.priority = 1
 
     def pre_move(self) -> list[int]:
         '''
@@ -235,6 +246,88 @@ class Block(Item):
         """
         raise Exception('ブロックは移動できません')
 
+
+class Cookie(Item):
+    def __init__(self, position: list[int], icon: str = '◦') -> None:
+        """
+        インスタンスの初期化
+
+        Args:
+            position (list[int]): 初期位置
+            icon (str): クッキーの表示
+        """
+        super().__init__(position, icon)
+
+    def pre_move(self, movement_position: list[int]) -> list[int]:
+        """
+        pre_moveにおけるクッキーの例外処理
+        
+        Args:
+            movement_position (list[int]): 次の動作の相対的な位置
+
+        Return:
+            list [int]: 次の位置
+
+        Example:
+            >>> c = Cookie([0,0])
+            >>> try:
+            ...     c.pre_move([0,1])
+            ... except Exception as e:
+            ...     print(e)
+            クッキーは移動できません
+
+            >>> c = Cookie([0,0])
+            >>> try:
+            ...     c.pre_move([-1,0])
+            ... except Exception as e:
+            ...     print(e)
+            クッキーは移動できません
+
+            >>> c = Cookie([1,0])
+            >>> try:
+            ...     c.pre_move([1,0])
+            ... except Exception as e:
+            ...     print(e)
+            クッキーは移動できません
+        """
+        raise Exception('クッキーは移動できません')
+
+    def move(self, next_position: list[int]) -> None:
+        """
+        moveにおけるクッキーの例外処理
+        
+        Args:
+            movement_position (list[int]): 次の動作の位置
+
+        Return:
+            list[int]: 次の位置
+
+        Example:
+            >>> c = Cookie([0, 0])
+            >>> try:
+            ...     c.move([0, 1])
+            ... except Exception as e:
+            ...     print(e)
+            クッキーは移動できません
+
+            >>> c = Block([0, 0])
+            >>> try:
+            ...     c.move([-1, 0])
+            ... except Exception as e:
+            ...     print(e)
+            クッキーは移動できません
+
+            >>> c = Cookie([1, 0])
+            >>> try:
+            ...     c.move([1, 0])
+            ... except Exception as e:
+            ...     print(e)
+            クッキーは移動できません
+        """
+        raise Exception('ブロックは移動できません')
+    
+
+    
 
 if __name__ == '__main__':
     import doctest

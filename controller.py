@@ -65,7 +65,7 @@ class Controller():
             screen.append(deepcopy(_screen))
         # positionからオブジェクトの位置情報を取り出して、
         # アイコンを表示する位置を決定する
-        for object in position:
+        for object in sorted(position):
             pos: list[int, int] = object.position
             screen[pos[0]][pos[1]]: str = object.icon
         # screenを表示する

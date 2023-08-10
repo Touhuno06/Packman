@@ -1,4 +1,4 @@
-from item import Block
+from item import Block, Cookie
 
 
 class Map():
@@ -18,25 +18,40 @@ class Map():
             >>> map = Map(3)
             >>> map.shape
             (3, 3)
-            >>> for block in map.block_array:
-            ...      block.position
+            >>> for items in map.map_items.values():
+            ...      print(items.position)
             [0, 0]
             [0, 1]
             [0, 2]
             [1, 0]
+            [1, 1]
             [1, 2]
             [2, 0]
             [2, 1]
             [2, 2]
+
+            >>> for k in map.map_items.keys():
+            ...      print(k)
+            (0, 0)
+            (0, 1)
+            (0, 2)
+            (1, 0)
+            (1, 1)
+            (1, 2)
+            (2, 0)
+            (2, 1)
+            (2, 2)
         """
-        self.block_array = list()
+        self.map_items = dict()
         self.shape = (size, size)
         for i in range(size):
             for j in range(size):
                 if(i==0 or j==0 or i==size-1 or j==size-1):
-                    self.block_array.append(Block([i, j]))
+                    self.map_items[(i, j)] = Block([i, j])
+                else:
+                    self.map_items[(i, j)] = Cookie([i, j])
 
-    def conflict(self, position: list[int]) -> bool:
+    def conflict(self, position: list[int]) -> bool | str:
         """マップ上のオブジェクトと与えられた位置との衝突判定を行うメソッド.
         想定しているマップの範囲外をpositionで指定した場合も衝突したと判定する.
 
@@ -44,40 +59,52 @@ class Map():
             position (list[int]): 衝突判定を行う相手の位置.
 
         Returns:
-            bool: 衝突するならTrue, しなければFalse.
+            bool: 衝突した時その対象のクラス名を返し、衝突しなければFalseを返す.
 
         Example:
             >>> map = Map(3)
             >>> map.conflict([0, 0])
-            True
+            'Block'
             >>> map.conflict([0, 1])
-            True
+            'Block'
             >>> map.conflict([0, 2])
-            True
+            'Block'
             >>> map.conflict([1, 0])
-            True
+            'Block'
             >>> map.conflict([1, 1])
-            False
+            'Cookie'
             >>> map.conflict([1, 2])
-            True
+            'Block'
             >>> map.conflict([2, 0])
-            True
+            'Block'
             >>> map.conflict([2, 1])
-            True
+            'Block'
             >>> map.conflict([2, 2])
-            True
+            'Block'
             >>> map.conflict([3, 1])
-            True
+            'Block'
             >>> map.conflict([-1, 1])
-            True
+            'Block'
         """
         for i, coordinate in enumerate(position):
-            if(coordinate<0 or coordinate>=self.shape[i]):
-                return True
-        for block in self.block_array:
-            if(position==block.position):
-                return True
-        return False
+            if(coordinate < 0 or coordinate >= self.shape[i]):
+                return Block.__name__
+        items_value = self.map_items.get(tuple(position))
+        if(items_value == None):
+            return  False
+        else:
+            return type(items_value).__name__
+        
+    def delete_item(self, position: list[int]) -> None:
+        """
+        衝突したマップ上のアイテムを削除するメソッド
+
+        Args:
+            position(list[int]): 消去する対象の位置
+        
+        
+        """
+        self.map_items.pop(tuple(position))
 
 
 if __name__ == '__main__':
