@@ -20,14 +20,13 @@ release = '1.0.0'
 
 extensions = [
     'sphinx.ext.autodoc', 
-    'sphinx.ext.napoleon', 
-
+    'sphinx.ext.napoleon',
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
 
-language = 'ja'
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

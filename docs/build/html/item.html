@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="ja" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>item module &#8212; Packman 1.0.0 ドキュメント</title>
+    <title>item module &#8212; Packman 1.0.0 documentation</title>
   
   
   
@@ -40,12 +40,13 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="_static/translations.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'item';</script>
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main module" href="main.html" />
+    <link rel="prev" title="game module" href="game.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="ja"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -115,12 +116,28 @@
   
   
   
-    <p class="title logo__title">Packman 1.0.0 ドキュメント</p>
+    <p class="title logo__title">Packman 1.0.0 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="controller.html">controller module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game.html">game module</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">item module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map.html">map module</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">Packman</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="controller.html">controller module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game.html">game module</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">item module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map.html">map module</a></li>
+</ul>
+</li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -166,7 +183,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -175,7 +192,7 @@
       
       <li><a href="_sources/item.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="ソースファイルをダウンロード"
+   title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -193,7 +210,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="PDFに印刷"
+  title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -213,7 +230,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="全画面モード"
+  title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -237,7 +254,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
@@ -261,7 +278,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> 目次 </h2>
+                <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -294,27 +311,27 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="module-item">
-<span id="item-module"></span><h1>item module<a class="headerlink" href="#module-item" title="この見出しへのパーマリンク">#</a></h1>
+<span id="item-module"></span><h1>item module<a class="headerlink" href="#module-item" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="item.Block">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">item.</span></span><span class="sig-name descname"><span class="pre">Block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'B'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item.Block" title="この定義へのパーマリンク">#</a></dt>
-<dd><p>ベースクラス: <a class="reference internal" href="#item.Item" title="item.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">item.</span></span><span class="sig-name descname"><span class="pre">Block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'B'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item.Block" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#item.Item" title="item.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="item.Block.move">
-<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">next_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#item.Block.move" title="この定義へのパーマリンク">#</a></dt>
+<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">next_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#item.Block.move" title="Permalink to this definition">#</a></dt>
 <dd><p>moveにおけるブロックの例外処理</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>movement_position</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) -- 次の動作の位置</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>movement_position</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – 次の動作の位置</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>次の位置</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list[int]</p>
 </dd>
 </dl>
-<p class="rubric">サンプル</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Block</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">b</span><span class="o">.</span><span class="n">move</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -343,20 +360,20 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="item.Block.pre_move">
-<span class="sig-name descname"><span class="pre">pre_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">movement_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#item.Block.pre_move" title="この定義へのパーマリンク">#</a></dt>
+<span class="sig-name descname"><span class="pre">pre_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">movement_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#item.Block.pre_move" title="Permalink to this definition">#</a></dt>
 <dd><p>pre_moveにおけるブロックの例外処理</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>movement_position</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) -- 次の動作の相対的な位置</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>movement_position</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – 次の動作の相対的な位置</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>次の位置</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list [int]</p>
 </dd>
 </dl>
-<p class="rubric">サンプル</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Block</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">b</span><span class="o">.</span><span class="n">pre_move</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -387,17 +404,17 @@ document.write(`
 
 <dl class="py class">
 <dt class="sig sig-object py" id="item.Ghost">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">item.</span></span><span class="sig-name descname"><span class="pre">Ghost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'G'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item.Ghost" title="この定義へのパーマリンク">#</a></dt>
-<dd><p>ベースクラス: <a class="reference internal" href="#item.Item" title="item.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">item.</span></span><span class="sig-name descname"><span class="pre">Ghost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'G'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item.Ghost" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#item.Item" title="item.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
 <p>お化けのクラス</p>
 <p>このクラスはお化けの座標を管理する．</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="item.Ghost.pre_move">
-<span class="sig-name descname"><span class="pre">pre_move</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#item.Ghost.pre_move" title="この定義へのパーマリンク">#</a></dt>
+<span class="sig-name descname"><span class="pre">pre_move</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#item.Ghost.pre_move" title="Permalink to this definition">#</a></dt>
 <dd><p>敵の次の座標を決定する．
 :returns: 敵の次の座標
 :rtype: next_position (list[int])</p>
-<p class="rubric">サンプル</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ghost_1</span><span class="o">=</span><span class="n">Ghost</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ghost_1</span><span class="o">.</span><span class="n">pre_move</span><span class="p">()</span>
@@ -410,12 +427,12 @@ document.write(`
 
 <dl class="py class">
 <dt class="sig sig-object py" id="item.Item">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">item.</span></span><span class="sig-name descname"><span class="pre">Item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item.Item" title="この定義へのパーマリンク">#</a></dt>
-<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">item.</span></span><span class="sig-name descname"><span class="pre">Item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item.Item" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>ディスプレイに表示されるアイテムのクラス</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="item.Item.position">
-<span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#item.Item.position" title="この定義へのパーマリンク">#</a></dt>
+<span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#item.Item.position" title="Permalink to this definition">#</a></dt>
 <dd><p>Playerの位置を示す</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -426,19 +443,19 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="item.Item.conflict">
-<span class="sig-name descname"><span class="pre">conflict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#item.Item.conflict" title="この定義へのパーマリンク">#</a></dt>
+<span class="sig-name descname"><span class="pre">conflict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#item.Item.conflict" title="Permalink to this definition">#</a></dt>
 <dd><p>敵の座標とプレイヤーの座標が一致しているかを判定する．
 :param position: プレイヤーの座標
 :type position: list[int]</p>
 <dl class="field-list simple">
-<dt class="field-odd">戻り値<span class="colon">:</span></dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>敵の座標とプレイヤーの座標が一致しているか、一致していたらTrue</p>
 </dd>
-<dt class="field-even">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
 </dd>
 </dl>
-<p class="rubric">サンプル</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ghost_1</span> <span class="o">=</span> <span class="n">Ghost</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ghost_2</span> <span class="o">=</span> <span class="n">Ghost</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ghost_1</span><span class="o">.</span><span class="n">conflict</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
@@ -463,17 +480,17 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="item.Item.move">
-<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">next_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#item.Item.move" title="この定義へのパーマリンク">#</a></dt>
+<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">next_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#item.Item.move" title="Permalink to this definition">#</a></dt>
 <dd><p>次の動作</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>next_position</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) -- 次の動作の位置</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>next_position</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – 次の動作の位置</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
-<p class="rubric">サンプル</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Player</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">position</span>
 <span class="go">[1, 1]</span>
@@ -486,20 +503,20 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="item.Item.pre_move">
-<span class="sig-name descname"><span class="pre">pre_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">movement_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#item.Item.pre_move" title="この定義へのパーマリンク">#</a></dt>
+<span class="sig-name descname"><span class="pre">pre_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">movement_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#item.Item.pre_move" title="Permalink to this definition">#</a></dt>
 <dd><p>次の位置の予測</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>movement_position</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) -- 次の動作の相対的な位置</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>movement_position</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – 次の動作の相対的な位置</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>次の位置</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list[int]</p>
 </dd>
 </dl>
-<p class="rubric">サンプル</p>
+<p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Player</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">pre_move</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="go">[0, 1]</span>
@@ -521,8 +538,8 @@ document.write(`
 
 <dl class="py class">
 <dt class="sig sig-object py" id="item.Player">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">item.</span></span><span class="sig-name descname"><span class="pre">Player</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'P'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item.Player" title="この定義へのパーマリンク">#</a></dt>
-<dd><p>ベースクラス: <a class="reference internal" href="#item.Item" title="item.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">item.</span></span><span class="sig-name descname"><span class="pre">Player</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'P'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#item.Player" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#item.Item" title="item.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
 <p>プレイヤーのクラス</p>
 <p>このクラスはプレイヤーの座標を管理する．
 .. attribute:: position</p>
@@ -550,6 +567,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="game.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">game module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="main.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">main module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -564,7 +599,7 @@ document.write(`
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> 目次
+    <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -599,7 +634,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-著者 Touhuno06
+By Touhuno06
 </p>
 
   </div>
